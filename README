@@ -1,7 +1,7 @@
 
 ## how to run the application
 
-**Execute the database structure provided in your sql server or do the following
+**Execute the database structure provided in your sql server or do the following -- The file is documentation files folder
 * Change the connection string with the "Key" UserManagementDBConnectionString to match your sql server connection
 * run the following commands on Package Manager Console:  - Make the default project is pointing to UserManagement.Infrastructure layer and the api project is set as a start up project
   -add-migration init
