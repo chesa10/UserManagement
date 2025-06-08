@@ -1,0 +1,22 @@
+
+## how to run the application
+
+**Execute the database structure provided in your sql server or do the following
+* Change the connection string with the "Key" UserManagementDBConnectionString to match your sql server connection
+* run the following commands on Package Manager Console:  - Make the default project is pointing to UserManagement.Infrastructure layer and the api project is set as a start up project
+  -add-migration init
+  -update-date
+
+* The above commands will create the database on your sql server using code first
+
+## Configuaration on UserManagement.API project
+
+* Change the connection string with the "Key" UserManagementDBConnectionString to the connection string pointing to the database you created above -- Make the change in appsettings.Development.json file
+* Run the project and copy the baseurl or the API
+
+## Configuaration on UserManagement.Frontend project
+
+* Change the value of ApiUrl in appsettings.json file to the Baseurl of the UserManagement.API project
+* Then the is ready run
+
+**Rebuild the entire project or build project to avoid some dll not being found**

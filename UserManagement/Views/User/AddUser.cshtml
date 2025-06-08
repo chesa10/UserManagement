@@ -1,0 +1,43 @@
+﻿@model UserManagement.Frontend.Models.AddUserViewModel
+
+@{
+    ViewBag.Title = "Add User";
+    Layout = "_Layout";
+}
+
+<h2>Add User</h2>
+
+@using (Html.BeginForm("AddUser", "User", new { @class = "row g-3" }, FormMethod.Post))
+{
+    <div class="col-auto">
+        <label for="PostalCodes" class="">Select Group</label>
+        @Html.ListBoxFor(model => model.GroupIds, new SelectList(Model.Groups,"Id","Name"), new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Groups)
+    </div>
+    <div class="col-auto">
+        <label for="PostalCode" class="">Name</label>
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", type = "text" })
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+    <div class="col-auto">
+        <label for="PostalCode" class="">Surname</label>
+        @Html.TextBoxFor(m => m.Surname, new { @class = "form-control", type = "text" })
+        @Html.ValidationMessageFor(m => m.Surname)
+    </div>
+    <div class="col-auto">
+        <label for="PostalCode" class="">Contact Number</label>
+        @Html.TextBoxFor(m => m.ContactNumber, new { @class = "form-control", type = "text" })
+        @Html.ValidationMessageFor(m => m.ContactNumber)
+    </div>
+    <div class="col-auto">
+        <label for="PostalCode" class="">Email</label>
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", type = "text" })
+        @Html.ValidationMessageFor(m => m.Email)
+    </div>
+
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3 " style="margin-top: 10px">Add User</button>
+    </div>
+
+
+}
